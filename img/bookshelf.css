@@ -1,0 +1,248 @@
+/* CSS Bookshelf */
+/* By Steve Workman - www.steveworkman.com */
+/* Full support in Safari 4 on OS X Snow Leopard and Opera 10.5 */
+/* Partial support in Firefox 3.6, full support in 3.7+ */
+/* Very little support in IE 8 and below, some support in IE 9 */
+/* For more details, see the blog post */
+
+dl.bookshelf {
+	display: block;
+	height:450px; /* height includes room for the description */
+	position: relative;
+	background: transparent url(bookshelf/shelf.png) 0 290px no-repeat; /* 300px is height of tallest book */
+}
+
+dl.bookshelf dt {
+	height:300px; /* Default height of books */
+	display: block;
+	float: left;
+	border:1px solid black;
+	font-size: 1.5em;
+	position: absolute; /* Using relative-absolute positioning */
+	
+	-webkit-transition-property: left, webkit-transform, webkit-box-shadow; /* transition on two properties */
+	-webkit-transition-duration: 0.5s; /* take 0.5 seconds */
+	-webkit-transition-timing-function:ease-in; /* Ease in */
+	-webkit-transform-origin: left bottom; /* use the left, bottom of the element as the origin of transformation */
+	-webkit-transform:rotate(-4deg) translateY(10px);
+	-webkit-perspective:100;
+	
+	/* Firefox supports transitions in 3.7+ */
+	-moz-transition-property: left, moz-transform;
+	-moz-transition-duration: 0.5s;
+	-moz-transition-timing-function:ease-in;
+	-moz-transform-origin: left bottom;
+	-moz-transform:rotate(-4deg) translateY(10px);
+	-moz-perspective:100;
+	
+	-o-transition-property: left, o-transform;
+	-o-transition-duration: 0.5s;
+	-o-transition-timing-function:ease-in;
+	-o-transform-origin: left bottom;
+	-o-transform:rotate(-4deg) translateY(10px);
+	-o-perspective:100;
+	
+	/* One day... */
+	-ms-transition-property: left, ms-transform;
+	-ms-transition-duration: 0.5s;
+	-ms-transition-timing-function:ease-in;
+	-ms-transform-origin: left bottom;
+	-ms-transform:rotate(-4deg) translateY(10px);
+	-ms-perspective:100;
+	
+	/* prefix-less properties */
+	transition-property: left, transform;
+	transition-duration: 0.5s;
+	transition-timing-function:ease-in;
+	transform-origin: left bottom;
+	transform:rotate(-4deg) translateY(10px);
+	perspective:100;
+}
+
+dl.bookshelf dt span {
+	-webkit-transform: rotate(90deg); /* Rotate book title 90 degrees */
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+	
+	display: block;
+	position: relative;
+	width: 300px; /* width is height of book */
+	top:150px;
+	right: 130px;
+	font-size:0.75em;
+}
+
+/* Each book is specified by class */
+/* Could be done with nth class, but not really necessary */
+
+dl.bookshelf dt.cssmastery {
+	background: url(bookshelf/cssmast-spine-full.png) 0 0 no-repeat,
+	url(bookshelf/cssmast-front.png) 40px 0 no-repeat; /* multiple backgrounds, one for spine, one for front cover */
+	left:10px;
+	width:260px; /* Actual full width of the book */
+	z-index:1; /* z index is the order of the book from left to right */
+}
+
+dl.bookshelf dt.beautwebdes {
+	background: url(bookshelf/beautdesign-spine.png) 0 0 no-repeat,
+	url(bookshelf/beautdesign-front.png) 40px 0 no-repeat;
+	left:52px;
+	width:280px;
+	z-index:2;
+}
+
+dl.bookshelf dt.dontmakemethink {
+	background: url(bookshelf/dontmakemethink-spine.png) 0 0 no-repeat,
+	url(bookshelf/dontmakemethink-front.png) 40px 0 no-repeat;
+	left:94px;
+	width:270px;
+	z-index:3;
+}
+
+
+dl.bookshelf dt.psforphotographers {
+	background:url(bookshelf/photoshop-spine.png) 0 0 no-repeat,
+	url(bookshelf/photoshop-front.png) 40px 0 no-repeat;
+	left:136px;
+	width:270px;
+	z-index:4;
+}
+
+dl.bookshelf dt.psforphotographers span {
+	color:#fff;
+}
+
+dl.bookshelf dt.webstandardsdesign {
+	background:url(bookshelf/webstandcreativity-spine.png) 0 0 no-repeat,
+	url(bookshelf/webstandcreativity-front.png) 40px 0 no-repeat;
+	left:220px;
+	width:305px;
+	z-index:6;
+	color: #fff;
+}
+
+/* Use of web fonts if you want to on the book titles */
+dl.bookshelf dt.webstandardsdesign span {
+	font-family: Helvetica;
+}
+
+dl.bookshelf dt.rightsideofbrain {
+	background:url(bookshelf/drawing-spine.png) 0 0 no-repeat,
+	url(bookshelf/drawing-front.png) 40px 0 no-repeat;
+	left:265px;
+	width:290px;
+	z-index:7;
+}
+
+dl.bookshelf dt.rightsideofbrain span {
+	font-family: "Times";
+}
+
+dl.bookshelf dt.learnedinarchitecture {
+	background:url(bookshelf/architecture-spine.png) 0 0 no-repeat,
+	url(bookshelf/architecture-front.png) 40px 0 no-repeat;
+	left:325px;
+	width:245px;
+	height: 150px; /* Smaller book */
+	top:150px;
+	z-index:8;
+	color: #fff;
+}
+
+dl.bookshelf dt.learnedinarchitecture span {
+	font-size:0.5em;
+	width: 130px;
+	right:50px;
+	top:60px;
+}
+
+dl.bookshelf dt.beginningphp {
+	background:url(bookshelf/php-spine.png) 0 0 no-repeat,
+	url(bookshelf/php-front.png) 40px 0 no-repeat;
+	left:178px;
+	width:270px;
+	z-index:4;
+}
+
+dl.bookshelf dt.beginningphp span {
+	top:140px;
+	color:#000;
+}
+
+
+dl.bookshelf dd {
+	position: absolute;
+	left: -9999px; /* off-screen at first */
+	font-size: 1em;
+	/* transition in from the left */
+	-webkit-transition-property: background, left;
+	-moz-transition-property: background, left;
+	-o-transition-property: background, left;
+	-ms-transition-property: background, left;
+	transition-property: background, left;
+}	
+
+/* Hover over or focus on a book and have it pull out of the shelf */
+dl.bookshelf dt:not(.showBook):hover {
+	cursor:pointer; /* turn cursor to a hand */
+	
+	-webkit-transform: rotate(-5deg) translateX(-30px) translateY(10px); /* Roate 5 degrees and pull out 30px */
+	-webkit-box-shadow:#000 1px 3px 5px; /* Add a box shadow so it looks like the book has depth */
+	
+	-moz-transform: rotate(-5deg) translateX(-30px) translateY(10px);
+	-moz-box-shadow:#000 1px 3px 5px;
+	-o-transform: rotate(-5deg) translateX(-30px) translateY(10px);
+	-o-box-shadow:#000 1px 3px 5px;
+	-ms-transform: rotate(-5deg) translateX(-30px) translateY(10px);
+	-ms-box-shadow:#000 1px 3px 5px;
+	transform: rotate(-5deg) translateX(-30px) translateY(10px);
+	box-shadow:#000 1px 3px 5px;
+}
+
+/* When you click/touch the book, it animates out of the shelf to the front and center */
+dl.bookshelf dt.showBook {
+	-webkit-transform: translateZ(10px) scale(1.1) rotate(0); /* Come above all the books */
+	-webkit-box-shadow:#000 10px 10px 5px;
+	
+	-moz-transform: scale(1.1) rotate(0); /* translateZ is -webkit only at the moment */
+	-moz-box-shadow:#000 10px 10px 5px;
+	-o-transform: scale(1.1) rotate(0);
+	-o-box-shadow:#000 10px 10px 5px;
+	-ms-transform:scale(1.1) rotate(0);
+	-ms-box-shadow:#000 10px 10px 5px;
+	transform: translateZ(10px) scale(1.1) rotate(0);
+	box-shadow:#000 10px 10px 5px;
+	
+	left:335px; /*(page width / 2) - (book width / 2), or thereabouts */
+	z-index: 100; /* just incase the translateZ doesn't work */
+	padding-left: -80px;
+}
+
+/* Class applied to definitions when shown */
+dl.bookshelf dd.showBook {
+	display:block;
+	width:350px;
+	position: absolute;
+	top:310px;
+	left:250px;
+	background:rgba(0,0,0,0.8); /* RGBA background */
+	padding: 10px;
+	color:#fff;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px; /* Opera and MS will support border radius without prefix */
+	text-shadow: #666 1px 1px;
+}
+
+dl.bookshelf dd.showBook a {
+	text-shadow: none; /* Remove the text shadow for the links */
+}
+
+/* Special case for amazon affliate links */
+dl.bookshelf dd .amazonLink {
+	float: right;
+	display: block;
+	margin: 10px;
+}
